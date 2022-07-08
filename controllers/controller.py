@@ -19,3 +19,7 @@ def game(player_1_move, player_2_move):
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')
+
+@app.route('/play')
+def play():
+    return render_template('play.html')
