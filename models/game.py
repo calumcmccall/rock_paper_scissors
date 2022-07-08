@@ -1,8 +1,12 @@
-from tkinter import N
 from models.player import Player
 
 winning_player = None
-game_result = "no result yet"
+# game_result = "no result yet"
+game_result = {
+    "result": "no result yet",
+    "move_one": "",
+    "move_two": ""
+}
 
 def play_game_from_url(player_1_move, player_2_move):
     player_1 = Player("player 1", player_1_move)
@@ -32,9 +36,10 @@ def play_game(player_1, player_2):
         elif player_2.player_move == "scissors":
             winning_player = None
 
-    print(f"{winning_player} wins")
     if winning_player != None:
-        game_result = f"{winning_player} wins"
+        game_result["result"] = f"{winning_player} wins"
+        game_result["move_one"] = player_1.player_move
+        game_result["move_two"] = player_2.player_move
     else:
-        game_result = "A draw! Nobody wins, or loses. 🤷"
+        game_result["result"] = "A draw! Nobody wins, or loses."
     return game_result

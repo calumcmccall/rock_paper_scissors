@@ -13,5 +13,4 @@ def index():
 @app.route('/<player_1_move>/<player_2_move>')
 def game(player_1_move, player_2_move):
     this_game = play_game_from_url(player_1_move, player_2_move)
-    print(this_game)
     return render_template('index.html', game_result=this_game)

@@ -4,6 +4,8 @@
 
 <h1>Test</h1>
 
-<p>  {{ game_result }} </p>
+<p> {{ game_result["result"] }} </p>
+<p> Player one move: {{ game_result["move_one"] }} </p>
+<p> Player two move: {{ game_result["move_two"] }} </p>
 
 {% endblock %}
