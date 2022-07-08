@@ -1,6 +1,6 @@
-from flask import render_template
+from flask import redirect, render_template, request, url_for
 from app import app
-from models.game import play_game, play_game_from_url
+from models.game import create_computer, play_game, play_game_from_url
 from models.player import Player
 
 @app.route('/')
@@ -20,6 +20,12 @@ def game(player_1_move, player_2_move):
 def welcome():
     return render_template('welcome.html')
 
-@app.route('/play')
+@app.route('/play', methods=['POST'])
 def play():
-    return render_template('play.html')
+    player_name = request.form['name']
+    player_move = request.form['move']
+    player_submit = Player(player_name, player_move)
+    computer = create_computer
+    this_game = play_game(player_submit, computer)
+    # play_game_with_computer(player_submit)
+    return render_template('index.html', game_result=this_game)

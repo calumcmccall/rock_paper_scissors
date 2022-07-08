@@ -10,6 +10,7 @@ game_result = {
 def play_game_from_url(player_1_move, player_2_move):
     player_1 = Player("Player 1", player_1_move)
     player_2 = Player("Player 2", player_2_move)
+
     return play_game(player_1, player_2)
 
 def play_game(player_1, player_2):
@@ -43,3 +44,10 @@ def play_game(player_1, player_2):
         game_result["result"] = "A draw! Nobody wins, or loses."
 
     return game_result
+
+def create_computer():
+    moves = ["rock", "paper", "scissors"]
+    computer_move = random.choice(moves)
+    computer = Player("Computer", computer_move)
+
+    return computer
