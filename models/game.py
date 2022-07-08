@@ -1,3 +1,4 @@
+from tkinter import N
 from models.player import Player
 
 winning_player = None
@@ -32,5 +33,8 @@ def play_game(player_1, player_2):
             winning_player = None
 
     print(f"{winning_player} wins")
-    game_result = f"{winning_player} wins"
+    if winning_player != None:
+        game_result = f"{winning_player} wins"
+    else:
+        game_result = "A draw! Nobody wins, or loses. 🤷"
     return game_result
