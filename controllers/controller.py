@@ -14,3 +14,7 @@ def index():
 def game(player_1_move, player_2_move):
     this_game = play_game_from_url(player_1_move, player_2_move)
     return render_template('index.html', game_result=this_game)
+
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')

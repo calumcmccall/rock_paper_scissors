@@ -9,8 +9,8 @@ game_result = {
 }
 
 def play_game_from_url(player_1_move, player_2_move):
-    player_1 = Player("player 1", player_1_move)
-    player_2 = Player("player 2", player_2_move)
+    player_1 = Player("Player 1", player_1_move)
+    player_2 = Player("Player 2", player_2_move)
     return play_game(player_1, player_2)
 
 def play_game(player_1, player_2):
