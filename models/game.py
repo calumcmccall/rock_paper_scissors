@@ -1,7 +1,6 @@
 from models.player import Player
 
 winning_player = None
-# game_result = "no result yet"
 game_result = {
     "result": "no result yet",
     "move_one": "",
@@ -30,7 +29,7 @@ def play_game(player_1, player_2):
             winning_player = player_2.player_name
     elif player_1.player_move == "scissors":
         if player_2.player_move == "rock":
-            winning_player = player_1.player_name
+            winning_player = player_2.player_name
         elif player_2.player_move == "paper":
             winning_player = player_1.player_name
         elif player_2.player_move == "scissors":
