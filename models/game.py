@@ -45,4 +45,5 @@ def play_game(player_1, player_2):
         game_result["move_two"] = player_2.player_move
     else:
         game_result["result"] = "A draw! Nobody wins, or loses."
+
     return game_result

@@ -5,10 +5,11 @@ from models.player import Player
 
 @app.route('/')
 def index():
-    player_1 = Player("Tom", "paper")
-    player_2 = Player("Amy", "paper")
-    play_game(player_1, player_2)
-    return render_template('index.html')
+    # player_1 = Player("Tom", "paper")
+    # player_2 = Player("Amy", "paper")
+    # play_game(player_1, player_2)
+    # return render_template('index.html')
+    return render_template('welcome.html')
 
 @app.route('/<player_1_move>/<player_2_move>')
 def game(player_1_move, player_2_move):
