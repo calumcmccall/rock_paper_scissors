@@ -36,6 +36,9 @@ def play_game(player_1, player_2):
         elif player_2.player_move == "scissors":
             winning_player = None
 
+    game_result["move_one"] = player_1.player_move
+    game_result["move_two"] = player_2.player_move
+    
     if winning_player != None:
         game_result["result"] = f"{winning_player} wins"
         game_result["move_one"] = player_1.player_move
