@@ -4,7 +4,9 @@ from models.player import Player
 winning_player = None
 game_result = {
     "result": "no result yet",
+    "player_one_name": "",
     "move_one": "",
+    "player_two_name": "",
     "move_two": ""
 }
 
@@ -39,7 +41,9 @@ def play_game(player_1, player_2):
     
     if winning_player != None:
         game_result["result"] = f"{winning_player} wins"
+        game_result["player_one_name"] = player_1.player_name
         game_result["move_one"] = player_1.player_move
+        game_result["player_two_name"] = player_2.player_name
         game_result["move_two"] = player_2.player_move
     else:
         game_result["result"] = "A draw! Nobody wins, or loses."
