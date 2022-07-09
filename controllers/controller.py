@@ -20,12 +20,16 @@ def game(player_1_move, player_2_move):
 def welcome():
     return render_template('welcome.html')
 
-@app.route('/play', methods=['POST'])
+@app.route('/play')
+def play_test():
+    return render_template('play.html')
+
+@app.route('/play', methods=['POST', 'GET'])
 def play():
     player_name = request.form['name']
     player_move = request.form['move']
     player_submit = Player(player_name, player_move)
-    computer = create_computer
+    computer = create_computer()
     this_game = play_game(player_submit, computer)
     # play_game_with_computer(player_submit)
     return render_template('index.html', game_result=this_game)

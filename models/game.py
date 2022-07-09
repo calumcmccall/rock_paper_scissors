@@ -1,3 +1,4 @@
+import random
 from models.player import Player
 
 winning_player = None
